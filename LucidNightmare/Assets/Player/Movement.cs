@@ -37,5 +37,12 @@ public class Movement : MonoBehaviour
     {
         rb.MovePosition(rb.position + (moveDirection * speed * Time.deltaTime));
     }
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Pellets"))
+        {
+            other.gameObject.SetActive(false);
+        }
+    }
 }
 
