@@ -216,7 +216,7 @@ GameObject:
   - component: {fileID: 833940589}
   m_Layer: 0
   m_Name: Lights
-  m_TagString: Untagged
+  m_TagString: Pellets
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -229,8 +229,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 833940587}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.01, y: -0.28, z: -0.063}
-  m_LocalScale: {x: 11.111111, y: 11.111111, z: 11.111111}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1628662637}
   m_RootOrder: 0
@@ -246,7 +246,7 @@ Halo:
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
-  m_Size: 5
+  m_Size: 0.12
 --- !u!108 &833940590
 Light:
   m_ObjectHideFlags: 0
@@ -258,8 +258,8 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
-  m_Range: 10
+  m_Intensity: 0.05
+  m_Range: 1
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -297,7 +297,7 @@ GameObject:
   - component: {fileID: 1628662636}
   - component: {fileID: 1628662635}
   - component: {fileID: 1628662634}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: PickUp
   m_TagString: Pellets
   m_Icon: {fileID: 0}
@@ -312,7 +312,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1628662633}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -370,7 +370,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1628662633}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.23, y: 1.486, z: -1.433}
+  m_LocalPosition: {x: 0.185, y: 1.486, z: -1.433}
   m_LocalScale: {x: 0.09, y: 0.09, z: 0.09}
   m_Children:
   - {fileID: 833940588}
@@ -387,6 +387,11 @@ PrefabInstance:
     - target: {fileID: 5214756507661915040, guid: 9ee938cc24c66aa4ab145549bde50fc5,
         type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5214756507661915040, guid: 9ee938cc24c66aa4ab145549bde50fc5,
+        type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5214756507661915044, guid: 9ee938cc24c66aa4ab145549bde50fc5,
@@ -453,6 +458,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsKinematic
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5214756508361827310, guid: 9ee938cc24c66aa4ab145549bde50fc5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.287
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ee938cc24c66aa4ab145549bde50fc5, type: 3}

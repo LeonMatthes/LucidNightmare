@@ -27,5 +27,13 @@ public class Movement : MonoBehaviour
 
         controller.Move(moveDirection * speed * Time.deltaTime);
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Pellets"))
+        {
+            other.gameObject.SetActive(false);
+        }
+    }
 }
 
