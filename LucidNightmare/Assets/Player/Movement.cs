@@ -19,25 +19,13 @@ public class Movement : MonoBehaviour
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
-        moveDirection = moveHorizontal * transform.right + moveVertical * transform.forward;
+        moveDirection = moveHorizontal * transform.right + moveVertical * transform.forward + Physics.gravity;
         if (moveDirection.magnitude > 1.0f)
         {
             moveDirection.Normalize();
         }
 
         controller.Move(moveDirection * speed * Time.deltaTime);
-    }
-
-    void FixedUpdate()
-    {
-        
-    }
-
-    void Move()
-    {
-        //rb.MovePosition(rb.position + (moveDirection * speed * Time.deltaTime));
-        //rb.AddForce(moveDirection * speed);
-        
     }
 }
 
