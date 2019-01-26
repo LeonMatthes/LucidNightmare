@@ -88,8 +88,7 @@ public class Door : MonoBehaviour
     {
         overlaps.Add(other);
 
-        Enemy enemy = other.GetComponent<Enemy>();
-        if(enemy != null)
+        if (other.GetComponent<Enemy>() != null)
         {
             startTimer();
         }
