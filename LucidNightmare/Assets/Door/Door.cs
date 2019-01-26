@@ -9,6 +9,8 @@ public class Door : MonoBehaviour
     public float degreesToOpen = -90;
 
     public float timeToOpen = 3;
+    public AudioClip Creepy_Door;
+    AudioSource audioSource;
 
     protected NavMeshObstacle obstacle;
     protected MeshRenderer meshRenderer;
@@ -35,6 +37,7 @@ public class Door : MonoBehaviour
 
         targetRotation = closedRotation = transform.rotation;
         openRotation = transform.rotation * Quaternion.Euler(Vector3.up * degreesToOpen);
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void rotateToAroundPoint(Rigidbody rigidBody, Quaternion currentRotation, Quaternion targetRotation, Vector3 originPoint, float degreesPerSecond)
@@ -120,6 +123,7 @@ public class Door : MonoBehaviour
     {
         stopTimer();
         targetRotation = openRotation;
+        audioSource.PlayOneShot(Creepy_Door);
     }
 
     public void close()
