@@ -18,12 +18,21 @@ public class Enemy : MonoBehaviour
     [HideInInspector]
     public List<Transform> path = new List<Transform>();
 
+    public Enemy()
+        :base()
+    {
+        returnToIdle();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        foreach (Transform transform in pathParent)
+        if(pathParent != null)
         {
-            path.Add(transform);
+            foreach (Transform transform in pathParent)
+            {
+                path.Add(transform);
+            }
         }
 
         returnToIdle();
