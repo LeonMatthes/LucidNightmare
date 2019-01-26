@@ -31,7 +31,7 @@ public class EnemyFollowPath : EnemyState
 
         enemy.agent.SetDestination(nextPosition());
 
-        if (Vector2.Distance(enemy.transform.position, enemy.targetTransform.position) < 10)
+        if (Vector2.Distance(enemy.transform.position, enemy.targetTransform.position) < enemy.distanceToChase)
         {
             enemy.state = new EnemyChase(enemy);
         }

@@ -11,8 +11,7 @@ public class Enemy : MonoBehaviour
 
     public Transform[] path;
 
-    [HideInInspector]
-    public Vector3 basePosition;
+    public float distanceToChase = 10;
 
     [HideInInspector]
     public EnemyState state;
@@ -21,7 +20,6 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        basePosition = transform.position;
         returnToIdle();
     }
 
