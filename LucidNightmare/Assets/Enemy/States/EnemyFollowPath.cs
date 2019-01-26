@@ -36,8 +36,6 @@ public class EnemyFollowPath : EnemyState
     // Update is called once per frame
     public override void Update()
     {
-        Debug.Log(index);
-
         if(Vector3.Distance(enemy.transform.position, nextPosition()) <= distanceThreshold)
         {
             index++;
