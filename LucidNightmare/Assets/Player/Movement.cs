@@ -10,12 +10,13 @@ public class Movement : MonoBehaviour
     public AudioClip TenCollectibles;
     public AudioClip TwentyCollectibles;
     public AudioClip ThirtyCollectibles;
+    public AudioClip CreepySound;
     AudioSource audioSource;
 
     private CharacterController controller;
     private Vector3 moveDirection;
-    private int count;
-    private int PelletsCount;
+    public int count;
+    public int PelletsCount;
 
 
     void Start()
@@ -25,6 +26,7 @@ public class Movement : MonoBehaviour
         PelletsCount = GameObject.FindGameObjectsWithTag("Pellets").Length;
         SetCountText();
         audioSource = GetComponent<AudioSource>();
+        InvokeRepeating("PlayCreepSound", 2.0f, 45.3f);
     }
 
     private void Update()
@@ -69,6 +71,10 @@ public class Movement : MonoBehaviour
         {
             audioSource.PlayOneShot(TenCollectibles);
         }
+    }
+    void PlayCreepSound()
+    {
+        audioSource.PlayOneShot(CreepySound);
     }
 }
 
