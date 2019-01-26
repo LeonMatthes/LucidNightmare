@@ -5,16 +5,11 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        state = new EnemyIdle(this);
-        basePosition = transform.position;
-    }
-
     public new Camera camera;
     public NavMeshAgent agent;
     public Transform targetTransform;
+
+    public Transform[] path;
 
     [HideInInspector]
     public Vector3 basePosition;
@@ -22,9 +17,31 @@ public class Enemy : MonoBehaviour
     [HideInInspector]
     public EnemyState state;
 
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        basePosition = transform.position;
+        returnToIdle();
+    }
+
+
     // Update is called once per frame
     void Update()
     {
         state.Update();
     }
+
+    public void returnToIdle()
+    {
+        if(path.Length == 0)
+        {
+            state = new EnemyIdle(this);
+        }
+        else
+        {
+            state = new EnemyFollowPath(this);
+        }
+    }
+
 }

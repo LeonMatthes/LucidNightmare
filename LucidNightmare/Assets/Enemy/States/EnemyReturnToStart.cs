@@ -15,7 +15,7 @@ public class EnemyReturnToStart : EnemyState
         float distanceThreshold = 3;
         if (Vector3.Distance(enemy.transform.position, enemy.basePosition) <= distanceThreshold)
         {
-            enemy.state = new EnemyIdle(enemy);
+            enemy.returnToIdle();
         }
     }
 }
