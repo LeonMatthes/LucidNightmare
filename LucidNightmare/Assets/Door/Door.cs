@@ -80,7 +80,7 @@ public class Door : MonoBehaviour
         Enemy enemy = other.GetComponent<Enemy>();
         if(enemy != null)
         {
-            startTimer();
+            close();
         }
     }
 
