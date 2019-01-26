@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class EnemyChase : EnemyState
 {
-    protected float timeOut = 10;
-
     public EnemyChase(Enemy enemy)
         : base(enemy)
     {
-        enemy.agent.SetDestination(enemy.targetTransform.position);
     }
     
     public override void Update()
     {
-        timeOut -= Time.deltaTime;
-        if(timeOut <= 0)
+        if(Vector3.Distance(enemy.targetTransform.position, enemy.transform.position) > enemy.distanceToChase)
         {
-            enemy.state = new EnemyReturnToStart(enemy);
+            enemy.returnToIdle();
+        }
+        else
+        {
+            enemy.agent.SetDestination(enemy.targetTransform.position);
         }
     }
 }
