@@ -35,7 +35,7 @@ public class Movement : MonoBehaviour
 
     void Move()
     {
-        rb.velocity = moveDirection * speed * Time.deltaTime;
+        rb.MovePosition(rb.position + (moveDirection * speed * Time.deltaTime));
     }
 }
 
