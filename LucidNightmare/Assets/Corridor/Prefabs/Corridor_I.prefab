@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 1636397795}
   - component: {fileID: 608800046035777114}
   - component: {fileID: 3076660204878112170}
+  - component: {fileID: 4323356037054783736}
+  - component: {fileID: 2529108204639276198}
   m_Layer: 0
   m_Name: Corridor_I
   m_TagString: Untagged
@@ -77,3 +79,29 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &4323356037054783736
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2131492892319776644}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0010001, y: 0.021666666, z: 0.053333346}
+  m_Center: {x: 0.009, y: 0.010833328, z: -0.026666673}
+--- !u!65 &2529108204639276198
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2131492892319776644}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.00100001, y: 0.021666666, z: 0.053333346}
+  m_Center: {x: -0.009, y: 0.010833328, z: -0.026666673}
