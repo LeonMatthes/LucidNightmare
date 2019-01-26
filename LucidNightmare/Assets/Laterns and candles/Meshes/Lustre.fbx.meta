@@ -1,9 +1,7 @@
 fileFormatVersion: 2
-guid: c501a8a7118966c4bb715d3a9efaa62f
-timeCreated: 1495464565
-licenseType: Store
+guid: cc7d641f77bded4449b8c7d472af0ef1
 ModelImporter:
-  serializedVersion: 19
+  serializedVersion: 23
   fileIDToRecycleName:
     100000: Circle.007
     100002: Cube.024
@@ -141,6 +139,7 @@ ModelImporter:
     400130: //RootNode
     400132: Torus
     400134: Torus.001
+    2100000: Material.000
     2300000: Circle.007
     2300002: Cube.024
     2300004: Cube.025
@@ -275,77 +274,79 @@ ModelImporter:
     3300128: Cylinder.002
     3300130: Torus
     3300132: Torus.001
-    4300000: Cube.089
-    4300002: Cube.088
-    4300004: Cube.087
-    4300006: Cube.086
-    4300008: Cube.085
-    4300010: Cube.084
-    4300012: Cube.083
-    4300014: Cube.082
-    4300016: Cube.081
-    4300018: Cube.080
-    4300020: Cube.079
-    4300022: Cube.078
-    4300024: Cube.077
-    4300026: Cube.076
-    4300028: Cube.075
-    4300030: Cube.074
-    4300032: Cube.073
-    4300034: Cube.072
-    4300036: Cube.071
-    4300038: Cube.070
-    4300040: Cube.069
-    4300042: Cube.068
-    4300044: Cube.067
-    4300046: Cube.066
-    4300048: Cube.065
-    4300050: Cube.064
-    4300052: Cube.063
-    4300054: Cube.062
-    4300056: Cube.061
-    4300058: Cube.060
-    4300060: Cube.059
-    4300062: Cube.058
-    4300064: Cube.057
+    4300000: Cylinder.002
+    4300002: Cube.024
+    4300004: Cube.025
+    4300006: Cube.026
+    4300008: Cube.027
+    4300010: Torus
+    4300012: Cube.028
+    4300014: Circle.007
+    4300016: Cube.032
+    4300018: Torus.001
+    4300020: Cube.033
+    4300022: Cube.034
+    4300024: Cube.035
+    4300026: Cube.036
+    4300028: Cube.037
+    4300030: Cube.038
+    4300032: Cube.039
+    4300034: Cube.040
+    4300036: Cube.041
+    4300038: Cube.042
+    4300040: Cube.043
+    4300042: Cube.044
+    4300044: Cube.045
+    4300046: Cube.046
+    4300048: Cube.047
+    4300050: Cube.048
+    4300052: Cube.049
+    4300054: Cube.050
+    4300056: Cube.051
+    4300058: Cube.052
+    4300060: Cube.053
+    4300062: Cube.054
+    4300064: Cube.055
     4300066: Cube.056
-    4300068: Cube.055
-    4300070: Cube.054
-    4300072: Cube.053
-    4300074: Cube.052
-    4300076: Cube.051
-    4300078: Cube.050
-    4300080: Cube.049
-    4300082: Cube.048
-    4300084: Cube.047
-    4300086: Cube.046
-    4300088: Cube.045
-    4300090: Cube.044
-    4300092: Cube.043
-    4300094: Cube.042
-    4300096: Cube.041
-    4300098: Cube.040
-    4300100: Cube.039
-    4300102: Cube.038
-    4300104: Cube.037
-    4300106: Cube.036
-    4300108: Cube.035
-    4300110: Cube.034
-    4300112: Cube.033
-    4300114: Torus.001
-    4300116: Cube.032
-    4300118: Circle.007
-    4300120: Cube.028
-    4300122: Torus
-    4300124: Cube.027
-    4300126: Cube.026
-    4300128: Cube.025
-    4300130: Cube.024
-    4300132: Cylinder.002
+    4300068: Cube.057
+    4300070: Cube.058
+    4300072: Cube.059
+    4300074: Cube.060
+    4300076: Cube.061
+    4300078: Cube.062
+    4300080: Cube.063
+    4300082: Cube.064
+    4300084: Cube.065
+    4300086: Cube.066
+    4300088: Cube.067
+    4300090: Cube.068
+    4300092: Cube.069
+    4300094: Cube.070
+    4300096: Cube.071
+    4300098: Cube.072
+    4300100: Cube.073
+    4300102: Cube.074
+    4300104: Cube.075
+    4300106: Cube.076
+    4300108: Cube.077
+    4300110: Cube.078
+    4300112: Cube.079
+    4300114: Cube.080
+    4300116: Cube.081
+    4300118: Cube.082
+    4300120: Cube.083
+    4300122: Cube.084
+    4300124: Cube.085
+    4300126: Cube.086
+    4300128: Cube.087
+    4300130: Cube.088
+    4300132: Cube.089
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -358,12 +359,15 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
+    extraUserProperties: []
     clipAnimations: []
     isReadable: 1
   meshes:
@@ -371,22 +375,34 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
     importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
@@ -401,7 +417,6 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
