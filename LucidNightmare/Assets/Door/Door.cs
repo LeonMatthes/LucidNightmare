@@ -19,6 +19,8 @@ public class Door : MonoBehaviour
     protected Quaternion openRotation;
     protected Quaternion closedRotation;
     protected Quaternion targetRotation;
+
+    protected HashSet<Collider> overlaps = new HashSet<Collider>();
     
 
     // Start is called before the first frame update
@@ -33,7 +35,6 @@ public class Door : MonoBehaviour
 
         targetRotation = closedRotation = transform.rotation;
         openRotation = transform.rotation * Quaternion.Euler(Vector3.up * degreesToOpen);
-
     }
 
     private void rotateToAroundPoint(Rigidbody rigidBody, Quaternion currentRotation, Quaternion targetRotation, Vector3 originPoint, float degreesPerSecond)
@@ -54,20 +55,39 @@ public class Door : MonoBehaviour
             openingTimer -= Time.deltaTime;
             if(openingTimer <= 0)
             {
-                if(isOpen())
+                open();
+            }
+        }
+
+        if(Input.GetButtonDown("Interact"))
+        {
+            foreach(Collider overlap in overlaps)
+            {
+                Movement movement = overlap.GetComponent<Movement>();
+                if(movement != null)
                 {
-                    close();
-                }
-                else
-                {
-                    open();
+                    switchState();
                 }
             }
         }
     }
 
+    public void switchState()
+    {
+        if(isOpen())
+        {
+            close();
+        }
+        else
+        {
+            open();
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
+        overlaps.Add(other);
+
         Enemy enemy = other.GetComponent<Enemy>();
         if(enemy != null)
         {
@@ -77,8 +97,16 @@ public class Door : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        Enemy enemy = other.GetComponent<Enemy>();
-        if(enemy != null)
+        overlaps.Remove(other);
+        bool foundEnemyOrPlayer = false;
+        foreach(Collider overlap in overlaps)
+        {
+            if(overlap.GetComponent<Enemy>() != null || overlap.GetComponent<Movement>() != null)
+            {
+                foundEnemyOrPlayer = true;
+            }
+        }
+        if(!foundEnemyOrPlayer)
         {
             close();
         }
