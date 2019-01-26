@@ -1,41 +1,55 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Movement : MonoBehaviour
 {
-    public float speed  = 200;
+    public float speed = 50;
+    public Text countText;
 
-    private Rigidbody rb;
-    Vector3 moveDirection;
+
+    private CharacterController controller;
+    private Vector3 moveDirection;
+    private int count;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        controller = GetComponent<CharacterController>();
+        count = 0;
+        SetCountText();
     }
+
     private void Update()
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
-        //Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
-        //rb.AddForce(movement * speed * Time.deltaTime);
-
-       /* Vector3 moveDirection = (moveHorizontal * transform.right + moveVertical * transform.forward);
-        if (moveDirection.magnitude > 1)
+        moveDirection = moveHorizontal * transform.right + moveVertical * transform.forward + Physics.gravity;
+        if (moveDirection.magnitude > 1.0f)
         {
-            moveDirection = moveDirection.normalized;
-        }*/
-        moveDirection = (moveHorizontal * transform.right + moveVertical * transform.forward).normalized;
-    }
-    void FixedUpdate()
-    {
-        Move();
+            moveDirection.Normalize();
+        }
+
+        controller.Move(moveDirection * speed * Time.deltaTime);
     }
 
-    void Move()
+    void OnTriggerEnter(Collider other)
     {
-        rb.velocity = moveDirection * speed * Time.deltaTime;
+        if (other.gameObject.CompareTag("Pellets"))
+        {
+            other.gameObject.SetActive(false);
+            count = count + 1;
+            SetCountText();
+        }
+    }
+    void SetCountText()
+    {
+        countText.text = count.ToString()+ "/200";
+        /*if (count >= 12)
+        {
+           Winning Condition here
+        }*/
     }
 }
 
