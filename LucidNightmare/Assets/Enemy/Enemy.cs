@@ -17,8 +17,10 @@ public class Enemy : MonoBehaviour
     public NavMeshAgent agent;
     public Transform targetTransform;
 
+    [HideInInspector]
     public Vector3 basePosition;
 
+    [HideInInspector]
     public EnemyState state;
 
     // Update is called once per frame
