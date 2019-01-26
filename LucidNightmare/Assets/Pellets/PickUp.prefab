@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4493016993335140481}
   m_Layer: 0
   m_Name: Lights
-  m_TagString: Pellets
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,7 +110,7 @@ Transform:
   m_GameObject: {fileID: 4493016994671454085}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.185, y: 1.486, z: -1.433}
-  m_LocalScale: {x: 0.09, y: 0.09, z: 0.09}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4493016993335140480}
   m_Father: {fileID: 0}
@@ -172,5 +172,5 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 1.0321109
+  m_Center: {x: 0.029002428, y: 0, z: 0.0018188953}
