@@ -12,11 +12,14 @@ public class Movement : MonoBehaviour
     private CharacterController controller;
     private Vector3 moveDirection;
     private int count;
+    private int PelletsCount;
+
 
     void Start()
     {
         controller = GetComponent<CharacterController>();
         count = 0;
+        PelletsCount = GameObject.FindGameObjectsWithTag("Pellets").Length;
         SetCountText();
     }
 
@@ -45,7 +48,7 @@ public class Movement : MonoBehaviour
     }
     void SetCountText()
     {
-        countText.text = count.ToString()+ "/200";
+        countText.text = count.ToString()+ "/" + PelletsCount;
         /*if (count >= 12)
         {
            Winning Condition here
