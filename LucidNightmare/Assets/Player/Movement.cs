@@ -1,17 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Movement : MonoBehaviour
 {
-    public float speed  = 50;
+    public float speed = 50;
+    public Text countText;
+
 
     private CharacterController controller;
     private Vector3 moveDirection;
+    private int count;
 
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        count = 0;
+        SetCountText();
     }
 
     private void Update()
@@ -33,7 +39,17 @@ public class Movement : MonoBehaviour
         if (other.gameObject.CompareTag("Pellets"))
         {
             other.gameObject.SetActive(false);
+            count = count + 1;
+            SetCountText();
         }
+    }
+    void SetCountText()
+    {
+        countText.text = count.ToString()+ "/200";
+        /*if (count >= 12)
+        {
+           Winning Condition here
+        }*/
     }
 }
 
