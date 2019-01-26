@@ -7,7 +7,10 @@ public class Movement : MonoBehaviour
 {
     public float speed = 50;
     public Text countText;
-
+    public AudioClip TenCollectibles;
+    public AudioClip TwentyCollectibles;
+    public AudioClip ThirtyCollectibles;
+    AudioSource audioSource;
 
     private CharacterController controller;
     private Vector3 moveDirection;
@@ -21,6 +24,7 @@ public class Movement : MonoBehaviour
         count = 0;
         PelletsCount = GameObject.FindGameObjectsWithTag("Pellets").Length;
         SetCountText();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -49,10 +53,22 @@ public class Movement : MonoBehaviour
     void SetCountText()
     {
         countText.text = count.ToString()+ "/" + PelletsCount;
-        /*if (count >= 12)
+        if (count == 10)
         {
-           Winning Condition here
-        }*/
+            audioSource.PlayOneShot(TenCollectibles);
+        }
+        if (count == 20)
+        {
+            audioSource.PlayOneShot(TwentyCollectibles);
+        }
+        if (count == 30)
+        {
+            audioSource.PlayOneShot(ThirtyCollectibles);
+        }
+        if (count == 30)
+        {
+            audioSource.PlayOneShot(TenCollectibles);
+        }
     }
 }
 

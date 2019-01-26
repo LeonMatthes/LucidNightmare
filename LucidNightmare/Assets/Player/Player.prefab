@@ -307,6 +307,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 50
   countText: {fileID: 0}
+  TenCollectibles: {fileID: 8300000, guid: 910ac40209bf5e5408a826643b6eeb89, type: 3}
+  TwentyCollectibles: {fileID: 8300000, guid: cee0fce97ebf1674187ef4056bf86dc5, type: 3}
+  ThirtyCollectibles: {fileID: 8300000, guid: 06a3a6c4f83cef64fb33179b293a1a0d, type: 3}
 --- !u!143 &7752328162555502059
 CharacterController:
   m_ObjectHideFlags: 0
