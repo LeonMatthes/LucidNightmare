@@ -6,36 +6,38 @@ public class Movement : MonoBehaviour
 {
     public float speed  = 200;
 
-    private Rigidbody rb;
-    Vector3 moveDirection;
+    private CharacterController controller;
+    private Vector3 moveDirection;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        controller = GetComponent<CharacterController>();
     }
+
     private void Update()
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
-        //Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
-        //rb.AddForce(movement * speed * Time.deltaTime);
-
-       /* Vector3 moveDirection = (moveHorizontal * transform.right + moveVertical * transform.forward);
-        if (moveDirection.magnitude > 1)
+        moveDirection = moveHorizontal * transform.right + moveVertical * transform.forward;
+        if (moveDirection.magnitude > 1.0f)
         {
-            moveDirection = moveDirection.normalized;
-        }*/
-        moveDirection = (moveHorizontal * transform.right + moveVertical * transform.forward).normalized;
+            moveDirection.Normalize();
+        }
+
+        controller.Move(moveDirection * speed * Time.deltaTime);
     }
+
     void FixedUpdate()
     {
-        Move();
+        
     }
 
     void Move()
     {
-        rb.MovePosition(rb.position + (moveDirection * speed * Time.deltaTime));
+        //rb.MovePosition(rb.position + (moveDirection * speed * Time.deltaTime));
+        //rb.AddForce(moveDirection * speed);
+        
     }
 }
 
