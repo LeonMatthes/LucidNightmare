@@ -10,7 +10,7 @@ public class EnemyFollowPath : EnemyState
     public EnemyFollowPath(Enemy enemy)
         :base(enemy)
     {
-        if (enemy.path.Length == 0)
+        if (enemy.path.Count == 0)
         {
             enemy.state = new EnemyIdle(enemy);
         }
@@ -18,7 +18,7 @@ public class EnemyFollowPath : EnemyState
         { 
             int minIndex = 0;
             float minDistance = float.PositiveInfinity;
-            for (int i = 0; i < enemy.path.Length; i++)
+            for (int i = 0; i < enemy.path.Count; i++)
             {
                 float distance = Vector3.Distance(enemy.path[i].transform.position, enemy.transform.position);
                 if (distance < minDistance)
@@ -39,7 +39,7 @@ public class EnemyFollowPath : EnemyState
         if(Vector3.Distance(enemy.transform.position, nextPosition()) <= distanceThreshold)
         {
             index++;
-            index %= enemy.path.Length;
+            index %= enemy.path.Count;
         }
 
         enemy.agent.SetDestination(nextPosition());
@@ -52,9 +52,9 @@ public class EnemyFollowPath : EnemyState
 
     private Vector3 nextPosition()
     {
-        if(index > enemy.path.Length)
+        if(index > enemy.path.Count)
         {
-            index %= enemy.path.Length;
+            index %= enemy.path.Count;
         }
 
         if(index < 0)

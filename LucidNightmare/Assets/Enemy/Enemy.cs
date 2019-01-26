@@ -5,21 +5,36 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
-    public new Camera camera;
     public NavMeshAgent agent;
     public Transform targetTransform;
 
-    public Transform[] path;
+    public Transform pathParent;
 
     public float distanceToChase = 10;
 
     [HideInInspector]
     public EnemyState state;
 
+    [HideInInspector]
+    public List<Transform> path = new List<Transform>();
+
+    public Enemy()
+        :base()
+    {
+        returnToIdle();
+    }
 
     // Start is called before the first frame update
     void Start()
     {
+        if(pathParent != null)
+        {
+            foreach (Transform transform in pathParent)
+            {
+                path.Add(transform);
+            }
+        }
+
         returnToIdle();
     }
 
@@ -32,7 +47,7 @@ public class Enemy : MonoBehaviour
 
     public void returnToIdle()
     {
-        if(path.Length == 0)
+        if(path.Count == 0)
         {
             state = new EnemyIdle(this);
         }
