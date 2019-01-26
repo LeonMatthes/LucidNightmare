@@ -109,6 +109,7 @@ MonoBehaviour:
   camera: {fileID: 0}
   agent: {fileID: 0}
   targetTransform: {fileID: 0}
+  basePosition: {x: 0, y: 0, z: 0}
   state: {fileID: 0}
 --- !u!54 &1386811527273364680
 Rigidbody:
