@@ -10,7 +10,6 @@ public class Enemy : MonoBehaviour
     {
         state = new EnemyIdle(this);
         basePosition = transform.position;
-        Debug.Log(basePosition);
     }
 
     public new Camera camera;
