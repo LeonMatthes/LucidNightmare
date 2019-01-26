@@ -42,7 +42,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 2
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_Intensity: 0.05
   m_Range: 1
   m_SpotAngle: 30
@@ -80,7 +80,7 @@ Halo:
   m_Enabled: 1
   m_Color:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190335
   m_Size: 0.12
 --- !u!1 &4493016994671454085
 GameObject:
