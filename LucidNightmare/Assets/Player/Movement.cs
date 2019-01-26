@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public float speed;
-
-private Rigidbody rb;
-
 public class Movement : MonoBehaviour
-{ 
+{
+    public float speed;
+
+    private Rigidbody rb;
+
     // Start is called before the first frame update
     void Start()
     {
