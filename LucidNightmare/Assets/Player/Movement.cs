@@ -53,7 +53,7 @@ public class Movement : MonoBehaviour
         }
 
         soundCountdown -= Time.deltaTime;
-        if (moveDirection.x + moveDirection.z > 0.1f)
+        if (Mathf.Abs(moveDirection.x + moveDirection.z) > 0.1f)
         {
             if (soundCountdown <= 0)
             {
