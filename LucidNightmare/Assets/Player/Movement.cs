@@ -12,7 +12,7 @@ public class Movement : MonoBehaviour
     public AudioClip ThirtyCollectibles;
     public AudioClip CreepySound;
     public AudioClip CreepySound2;
-    AudioSource audioSource;
+    private AudioSource audioSource;
     public AudioClip[] Pellet;
     private AudioClip pelletClip;
     public AudioClip[] Moving;
@@ -24,14 +24,18 @@ public class Movement : MonoBehaviour
     public int count;
     public int PelletsCount;
 
+    private float soundCountdown;
+    private float defaultSoundCountdown = 0.5f;
+
 
     void Start()
     {
+        soundCountdown = defaultSoundCountdown;
         controller = GetComponent<CharacterController>();
         count = 0;
         PelletsCount = GameObject.FindGameObjectsWithTag("Pellets").Length;
-        SetCountText();
         audioSource = GetComponent<AudioSource>();
+        SetCountText();
         InvokeRepeating("PlayCreepSound", 2.0f, 20.0f);
         InvokeRepeating("PlayCreepSound2", 15.0f, 20.0f);
         
@@ -46,14 +50,33 @@ public class Movement : MonoBehaviour
         if (moveDirection.magnitude > 1.0f)
         {
             moveDirection.Normalize();
-            /*int index = Random.Range(0, Moving.Length);
-            movingClip = Moving[index];
-            audioSource.clip = movingClip;
-            audioSource.Play();
-            Move Sounds*/
+        }
+
+        soundCountdown -= Time.deltaTime;
+        if (moveDirection.x + moveDirection.z > 0.1f)
+        {
+            Debug.Log("Moving");
+            if (soundCountdown <= 0)
+            {
+                soundCountdown = defaultSoundCountdown;
+                randomizeStepSound();
+            }
+        }
+        else
+        {
+            audioSource.Stop();
         }
 
         controller.Move(moveDirection * speed * Time.deltaTime);
+    }
+
+    private void randomizeStepSound()
+    {
+        int index = Random.Range(0, Moving.Length);
+        movingClip = Moving[index];
+        audioSource.clip = movingClip;
+        audioSource.Play();
+        //Move Sounds*/
     }
 
     void OnTriggerEnter(Collider other)
@@ -72,21 +95,20 @@ public class Movement : MonoBehaviour
     void SetCountText()
     {
         countText.text = count.ToString()+ "/" + PelletsCount;
-        if (count == 10)
+        if(count > 0)
         {
-            audioSource.PlayOneShot(TenCollectibles);
-        }
-        if (count == 20)
-        {
-            audioSource.PlayOneShot(TwentyCollectibles);
-        }
-        if (count == 30)
-        {
-            audioSource.PlayOneShot(ThirtyCollectibles);
-        }
-        if (count == 30)
-        {
-            audioSource.PlayOneShot(TenCollectibles);
+            if (count % 30 == 0)
+            {
+                audioSource.PlayOneShot(ThirtyCollectibles);
+            }
+            else if (count % 20 == 0)
+            {
+                audioSource.PlayOneShot(TwentyCollectibles);
+            }
+            else if (count % 10 == 0)
+            {
+                audioSource.PlayOneShot(TenCollectibles);
+            }
         }
     }
     void PlayCreepSound()
