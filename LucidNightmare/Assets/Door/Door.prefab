@@ -314,7 +314,7 @@ MonoBehaviour:
   degreesToOpen: -120
   timeToOpen: 3
   Creepy_Door: {fileID: 8300000, guid: 5405606e8d5e40746a95ab49d29c77d5, type: 3}
-  Creepy_Door_Close: {fileID: 8300000, guid: 42f9c4320e2fc4c4f90db210625eef1b, type: 3}
+  Creepy_Door_Close: {fileID: 8300000, guid: 47f140b3288ce414ebb1b8537fc5ed99, type: 3}
 --- !u!136 &2193700269102159841
 CapsuleCollider:
   m_ObjectHideFlags: 0
