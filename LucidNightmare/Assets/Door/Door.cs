@@ -10,6 +10,7 @@ public class Door : MonoBehaviour
 
     public float timeToOpen = 3;
     public AudioClip Creepy_Door;
+    public AudioClip Creepy_Door_Close;
     AudioSource audioSource;
 
     protected NavMeshObstacle obstacle;
@@ -47,7 +48,7 @@ public class Door : MonoBehaviour
         Quaternion deltaRotation = newRotation * Quaternion.Inverse(currentRotation);
         rigidBody.MovePosition(deltaRotation * (rigidBody.position - originPoint) + originPoint);
     }
-
+    
     // Update is called once per frame
     void Update()
     {
@@ -130,6 +131,7 @@ public class Door : MonoBehaviour
     {
         stopTimer();
         targetRotation = closedRotation;
+        audioSource.PlayOneShot(Creepy_Door_Close);
     }
 
     private void startTimer()
