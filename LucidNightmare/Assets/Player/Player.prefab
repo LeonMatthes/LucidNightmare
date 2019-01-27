@@ -312,12 +312,22 @@ MonoBehaviour:
   TenCollectibles: {fileID: 8300000, guid: 910ac40209bf5e5408a826643b6eeb89, type: 3}
   TwentyCollectibles: {fileID: 8300000, guid: cee0fce97ebf1674187ef4056bf86dc5, type: 3}
   ThirtyCollectibles: {fileID: 8300000, guid: 06a3a6c4f83cef64fb33179b293a1a0d, type: 3}
-  CreepySound: {fileID: 8300000, guid: f95199978c8ef7f4ab253a03d0714c0e, type: 3}
-  CreepySound2: {fileID: 0}
+  CreepySound: {fileID: 8300000, guid: 8de97ff11ba7a694fb608a8da4a0230f, type: 3}
+  CreepySound2: {fileID: 8300000, guid: ce75fac56fa1c584886840b2e2d99141, type: 3}
   pelletAudioSource: {fileID: 4849539545409162887}
-  Pellet: []
+  Pellet:
+  - {fileID: 8300000, guid: 5c1c9f0d574e2994e92982a4aedadfac, type: 3}
+  - {fileID: 8300000, guid: dc1bf2db5e473d4459321ed995c59f3d, type: 3}
+  - {fileID: 8300000, guid: 4d8a447d8f4d8bb4b877d4c30a89a8ba, type: 3}
+  - {fileID: 8300000, guid: 8dc652f74b6f5de499a6a1e12aed99aa, type: 3}
+  - {fileID: 8300000, guid: 86e06ce27054b134eae14630b0ad6619, type: 3}
+  - {fileID: 8300000, guid: 751a87a02b44d2b4cbf8ce904f5804fe, type: 3}
   movementAudioSource: {fileID: 831781932210997833}
-  Moving: []
+  Moving:
+  - {fileID: 8300000, guid: 238e8b0ff0a840948890ef43d63af606, type: 3}
+  - {fileID: 8300000, guid: 8b5ca6cada0fba741ad5b755027326da, type: 3}
+  - {fileID: 8300000, guid: 364812c00b1a1574b82506331391835a, type: 3}
+  - {fileID: 8300000, guid: 2a7ff27855a09f2439dba18c6cfed705, type: 3}
   count: 0
   PelletsCount: 0
 --- !u!143 &7752328162555502059

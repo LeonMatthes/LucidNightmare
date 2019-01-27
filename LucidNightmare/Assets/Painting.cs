@@ -17,7 +17,8 @@ public class Painting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float alphaThreshold = 1.0f - (float) player.count / (float) player.PelletsCount;
+        float alphaThreshold = (1.0f - (float)player.count / (float)player.PelletsCount) * 0.969f + 0.031f;
+        Debug.Log(alphaThreshold);
         meshRenderer.materials[0].SetFloat("_Cutoff", alphaThreshold);
     }
 }
