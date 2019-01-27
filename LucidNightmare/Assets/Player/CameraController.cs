@@ -21,6 +21,7 @@ public class CameraController : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         cam = GetComponent<Camera>();
     }
 
@@ -37,10 +38,5 @@ public class CameraController : MonoBehaviour
         transform.Rotate(Vector3.right, rotationY);
 
         transform.parent.rotation *= Quaternion.Euler(transform.parent.up * rotationX);
-        if (Input.GetKey(KeyCode.Escape))
-        {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }
     }
 }
