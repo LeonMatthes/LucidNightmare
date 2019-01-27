@@ -6,20 +6,18 @@ public class Painting : MonoBehaviour
 {
     public Movement player;
 
-    float alphaThreshold = 1;
-
-    private Material material;
+    private MeshRenderer meshRenderer;
 
     // Start is called before the first frame update
     void Start()
     {
-        material = GetComponent<MeshRenderer>().materials[0];
+        meshRenderer = GetComponent<MeshRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //alphaThreshold = player.;
-        material.SetFloat("_Cutoff", alphaThreshold);
+        float alphaThreshold = 1.0f - (float) player.count / (float) player.PelletsCount;
+        meshRenderer.materials[0].SetFloat("_Cutoff", alphaThreshold);
     }
 }
