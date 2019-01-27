@@ -12,9 +12,12 @@ public class Movement : MonoBehaviour
     public AudioClip ThirtyCollectibles;
     public AudioClip CreepySound;
     public AudioClip CreepySound2;
-    private AudioSource audioSource;
+
+    public AudioSource pelletAudioSource;
     public AudioClip[] Pellet;
     private AudioClip pelletClip;
+
+    public AudioSource movementAudioSource;
     public AudioClip[] Moving;
     private AudioClip movingClip;
 
@@ -34,11 +37,9 @@ public class Movement : MonoBehaviour
         controller = GetComponent<CharacterController>();
         count = 0;
         PelletsCount = GameObject.FindGameObjectsWithTag("Pellets").Length;
-        audioSource = GetComponent<AudioSource>();
         SetCountText();
         InvokeRepeating("PlayCreepSound", 2.0f, 20.0f);
         InvokeRepeating("PlayCreepSound2", 15.0f, 20.0f);
-        
     }
 
     private void Update()
@@ -63,7 +64,7 @@ public class Movement : MonoBehaviour
         }
         else
         {
-            audioSource.Stop();
+            movementAudioSource.Stop();
         }
 
         controller.Move(moveDirection * speed * Time.deltaTime);
@@ -73,8 +74,8 @@ public class Movement : MonoBehaviour
     {
         int index = Random.Range(0, Moving.Length);
         movingClip = Moving[index];
-        audioSource.clip = movingClip;
-        audioSource.Play();
+        movementAudioSource.clip = movingClip;
+        movementAudioSource.Play();
         //Move Sounds*/
     }
 
@@ -83,10 +84,12 @@ public class Movement : MonoBehaviour
         if (other.gameObject.CompareTag("Pellets"))
         {
             other.gameObject.SetActive(false);
+
             int index = Random.Range(0, Pellet.Length);
             pelletClip = Pellet[index];
-            audioSource.clip = pelletClip;
-            audioSource.Play();
+            pelletAudioSource.clip = pelletClip;
+            pelletAudioSource.Play();
+
             count = count + 1;
             SetCountText();
         }
@@ -98,25 +101,25 @@ public class Movement : MonoBehaviour
         {
             if (count % 30 == 0)
             {
-                audioSource.PlayOneShot(ThirtyCollectibles);
+                pelletAudioSource.PlayOneShot(ThirtyCollectibles);
             }
             else if (count % 20 == 0)
             {
-                audioSource.PlayOneShot(TwentyCollectibles);
+                pelletAudioSource.PlayOneShot(TwentyCollectibles);
             }
             else if (count % 10 == 0)
             {
-                audioSource.PlayOneShot(TenCollectibles);
+                pelletAudioSource.PlayOneShot(TenCollectibles);
             }
         }
     }
     void PlayCreepSound()
     {
-        audioSource.PlayOneShot(CreepySound);
+        pelletAudioSource.PlayOneShot(CreepySound);
     }
     void PlayCreepSound2()
     {
-        audioSource.PlayOneShot(CreepySound2);
+        pelletAudioSource.PlayOneShot(CreepySound2);
     }
 }
 
