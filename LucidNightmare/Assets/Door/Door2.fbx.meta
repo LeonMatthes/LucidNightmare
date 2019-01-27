@@ -12,7 +12,7 @@ ModelImporter:
     400004: //RootNode
     400006: Wall
     2100000: Door Jam
-    2100002: Wall-Kitchen Right
+    2100002: DoorWall
     2100004: Door-Metal
     2100006: Door-Wood
     2300000: Door Jam 1
