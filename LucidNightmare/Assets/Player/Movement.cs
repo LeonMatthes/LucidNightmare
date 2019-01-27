@@ -11,6 +11,7 @@ public class Movement : MonoBehaviour
     public AudioClip TwentyCollectibles;
     public AudioClip ThirtyCollectibles;
     public AudioClip CreepySound;
+    public AudioClip CreepySound2;
     AudioSource audioSource;
     public AudioClip[] Pellet;
     private AudioClip pelletClip;
@@ -31,7 +32,8 @@ public class Movement : MonoBehaviour
         PelletsCount = GameObject.FindGameObjectsWithTag("Pellets").Length;
         SetCountText();
         audioSource = GetComponent<AudioSource>();
-        InvokeRepeating("PlayCreepSound", 2.0f, 45.3f);
+        InvokeRepeating("PlayCreepSound", 2.0f, 20.0f);
+        InvokeRepeating("PlayCreepSound2", 15.0f, 20.0f);
         
     }
 
@@ -90,6 +92,10 @@ public class Movement : MonoBehaviour
     void PlayCreepSound()
     {
         audioSource.PlayOneShot(CreepySound);
+    }
+    void PlayCreepSound2()
+    {
+        audioSource.PlayOneShot(CreepySound2);
     }
 }
 

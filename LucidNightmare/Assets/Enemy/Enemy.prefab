@@ -145,9 +145,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6de75df35e2e4d4429ea5917798e8c58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 0}
   agent: {fileID: 2016266480429365516}
   targetTransform: {fileID: 0}
-  path: []
+  pathParent: {fileID: 0}
   distanceToChase: 10
   state: {fileID: 0}
+  path: []
