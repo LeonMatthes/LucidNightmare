@@ -55,7 +55,6 @@ public class Movement : MonoBehaviour
         soundCountdown -= Time.deltaTime;
         if (moveDirection.x + moveDirection.z > 0.1f)
         {
-            Debug.Log("Moving");
             if (soundCountdown <= 0)
             {
                 soundCountdown = defaultSoundCountdown;
