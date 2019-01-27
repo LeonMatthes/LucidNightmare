@@ -1,29 +1,16 @@
 fileFormatVersion: 2
-guid: d1581feea2810c0498382ec2835d173a
+guid: 8a1094f0a7d39b242967ad0cdb76cbbd
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Door Jam 1
-    100002: //RootNode
-    100004: Door-Front
-    100006: Wall
-    400000: Door Jam 1
-    400002: //RootNode
-    400004: Door-Front
-    400006: Wall
-    2100000: Door Jam
-    2100002: Wall-Kitchen Right
-    2100004: Door-Metal
-    2100006: Door-Wood
-    2300000: Door Jam 1
-    2300002: Door-Front
-    2300004: Wall
-    3300000: Door Jam 1
-    3300002: Door-Front
-    3300004: Wall
-    4300000: Door Jam 1
-    4300002: Wall
-    4300004: Door-Front
+    100000: //RootNode
+    100002: fist
+    400000: //RootNode
+    400002: fist
+    2100000: fistMat
+    2300000: fist
+    3300000: fist
+    4300000: fist
   externalObjects: {}
   materials:
     importMaterials: 1
