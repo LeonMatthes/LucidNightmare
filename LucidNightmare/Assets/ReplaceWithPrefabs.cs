@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
-
+/*
 public class ReplaceWithPrefabs : MonoBehaviour
 {
     public GameObject Corridor_I;
@@ -91,4 +91,4 @@ public class PrefabSwitchEditor : Editor
             prefabSwitch.swap();
         }
     }
-}
+}*/
