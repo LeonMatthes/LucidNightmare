@@ -1,16 +1,15 @@
 fileFormatVersion: 2
-guid: 381bc210731962149b455032082ab725
+guid: 4ebcf672c7d7a894d895c5ae6739d66a
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: No Name
-    2100002: Material.010
+    2100000: Material.010
     2300000: //RootNode
     3300000: //RootNode
-    4300000: I
-    4300002: Corridor.002
+    4300000: Corridor.002
+    6400000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -44,7 +43,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
