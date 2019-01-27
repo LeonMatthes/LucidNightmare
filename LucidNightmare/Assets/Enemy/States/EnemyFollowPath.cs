@@ -36,7 +36,8 @@ public class EnemyFollowPath : EnemyState
     // Update is called once per frame
     public override void Update()
     {
-        if(Vector3.Distance(enemy.transform.position, nextPosition()) <= distanceThreshold)
+        float distance = Vector3.Distance(enemy.transform.position, nextPosition());
+        if (distance <= distanceThreshold)
         {
             index++;
             index %= enemy.path.Count;
@@ -44,7 +45,7 @@ public class EnemyFollowPath : EnemyState
 
         enemy.agent.SetDestination(nextPosition());
 
-        if (Vector2.Distance(enemy.transform.position, enemy.targetTransform.position) < enemy.distanceToChase)
+        if (Vector3.Distance(enemy.transform.position, enemy.targetTransform.position) < enemy.distanceToChase)
         {
             enemy.state = new EnemyChase(enemy);
         }

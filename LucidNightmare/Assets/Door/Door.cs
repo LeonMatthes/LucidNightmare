@@ -122,15 +122,28 @@ public class Door : MonoBehaviour
 
     public void open()
     {
+        if (!isOpen())
+        {
+            audioSource.PlayOneShot(Creepy_Door);
+        }
         stopTimer();
         targetRotation = openRotation;
-        audioSource.PlayOneShot(Creepy_Door);
     }
 
     public void close()
     {
+        if(isOpen())
+        {
+            StartCoroutine(playCloseSound(timeToOpen * 0.5f));
+        }
         stopTimer();
         targetRotation = closedRotation;
+    }
+
+    private IEnumerator playCloseSound(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
         audioSource.PlayOneShot(Creepy_Door_Close);
     }
 
